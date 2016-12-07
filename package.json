@@ -1,0 +1,29 @@
+{
+  "name": "crispy-magic-api",
+  "description": "Crispy Magic is a JavaScript application offering a deck builder and a collection manager for the Magic: The Gathering card game with a cool interface!",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://Narxem@github.com/Tydax/crispy-magic-api.git"
+  },
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "babel-preset-es2016": "^6.16.0",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-nodemon": "^2.2.1",
+    "merge-descriptors": "^1.0.1"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-es2016"
+    ]
+  }
+}

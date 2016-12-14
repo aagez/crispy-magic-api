@@ -31,9 +31,9 @@ gulp.task('build', ['clean', 'check'], () => {
 // /!\ : don't put this task as dependency of another task : nodemon run permanently
 gulp.task('main', ['build'], (callback) => {
   nodemon({
-  	script: `${paths.libDir}`,
-  	watch: [`${paths.allSrcJs}`],
-  	tasks: ['build']
+    script: `${paths.libDir}/server`,
+    watch: [`${paths.allSrcJs}`],
+    tasks: ['build']
   });
 });
 

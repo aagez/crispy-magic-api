@@ -3,6 +3,7 @@ const babel = require('gulp-babel');
 const del = require('del');
 const exec = require('child_process').exec;
 const nodemon = require('gulp-nodemon');
+const flow = require('gulp-flowtype');
 
 const paths = {
   allSrcJs: 'src/**/*.js',
@@ -13,7 +14,13 @@ gulp.task('clean', () => {
   return del(paths.libDir);
 });
 
-gulp.task('build', ['clean'], () => {
+gulp.task('check', () => {
+  return gulp
+    .src(paths.allSrcJs)
+    .pipe(flow({abort : true}));
+});
+
+gulp.task('build', ['clean', 'check'], () => {
   const stream = gulp
     .src(paths.allSrcJs)
     .pipe(babel())

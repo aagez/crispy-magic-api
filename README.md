@@ -1,4 +1,4 @@
-# [Crispy Magic](http://crispy-magic.tumblr.com)
+# [Crispy Magic](http://crispymagic.wordpress.com)
 ###### Adrien (Narxem) AGEZ & Armand (Tydax) BOUR
 Crispy Magic is a JavaScript application offering a deck builder and a
 collection manager for the Magic: The Gathering card game with a cool interface!

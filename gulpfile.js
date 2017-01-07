@@ -7,7 +7,7 @@ const flow = require('gulp-flowtype');
 
 const paths = {
   allSrcJs: 'src/**/*.js',
-  libDir: 'lib',
+  libDir: 'lib/',
 };
 
 gulp.task('clean', () => {

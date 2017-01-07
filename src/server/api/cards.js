@@ -37,6 +37,7 @@ router.get('/', (request, response) => {
     winston.debug('============= NEW REQUEST =============');
     winston.debug('request object : ' + JSON.stringify(dbRequest));
     winston.debug('filter object : ' + JSON.stringify(filter));
+    response.setHeader('Content-Type', 'text/json');
     response.json(result);
   });
 })

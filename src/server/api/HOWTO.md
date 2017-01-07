@@ -4,10 +4,16 @@ Toutes les URL de l'api commencent par `/api`
 
 # Obtenir des cartes
 
-On peut obtenir un ensemble de cartes répondant à certaines conditions avec la route `/api/cards`. Les conditions sont passées en paramètres via l'URL
+On peut obtenir un ensemble de cartes répondant à certaines conditions avec la route `/api/cards`. Les conditions sont passées en paramètres via l'URL.
+Si plusieurs conditions sont passées, seules les cartes remplissant TOUTES les conditions sont renvoyées
 
-`/api/cards?name=[nom]` : recherche les cartes qui contiennent [nom] dans leur nom. 
+Voici la liste des paramètres possibles
+
+* `name` : recherche les cartes par nom. Ce paramètre est traité comme une expression régulière. De plus, il est insensible à la casse.
 /!\ : Pour l'instant, seul les noms anglais sont recherchés
+* `cmc` : recherche les cartes ayant le cout converti de mana demandé. Si le paramètre n'est pas un nombre entier, alors il est ignoré.
+
+Exemple : `GET /api/cards?name=gideon&cmc=4` nous renverra toutes les cartes qui ont Gideon dans leur nom et dont le cout converti de mana est de exactement 4
 
 D'autres conditions arriveront
 

@@ -22,7 +22,7 @@ app.get('/', (request, response) => {
 });
 
 
-app.use('/cards', require('./api/cards'));
+app.use('/api/cards', require('./api/cards'));
 
 
 app.listen(8080);

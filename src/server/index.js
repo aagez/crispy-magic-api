@@ -1,13 +1,28 @@
 // @flow
-var express = require('express');
+const express = require('express');
+const mongo = require('mongodb').MongoClient;
+const monk = require('monk');
+const winston = require('winston');
 
-var app = express();
+const app = express();
 
 
-app.get('/', function(request, response) {
+const db = monk('localhost/sets');
+
+app.use((request, response, next) => {
+  request.db = db;
+  next();
+});
+
+winston.level = 'debug';
+
+app.get('/', (request, response) => {
 	response.setHeader('Content-Type', 'text/html');
 	response.end('Hello World');
 });
+
+
+app.use('/cards', require('./api/cards'));
 
 
 app.listen(8080);

@@ -16,7 +16,8 @@ const TYPE_MAP = {
 exports.parseTypes = (param) => {
   const res = [];
   var i = 0;
-  for(const letter of param) {
+  for(var letter of param) {
+    letter = letter.toUpperCase();
     if (TYPE_MAP.hasOwnProperty(letter)) {
       const type = TYPE_MAP[letter];
       if (res.indexOf(type) === -1)

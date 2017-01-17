@@ -12,10 +12,21 @@ Voici la liste des paramètres possibles
 * `name` : recherche les cartes par nom. Ce paramètre est traité comme une expression régulière. De plus, il est insensible à la casse.
 /!\ : Pour l'instant, seul les noms anglais sont recherchés
 * `cmc` : recherche les cartes ayant le cout converti de mana demandé. Si le paramètre n'est pas un nombre entier, alors il est ignoré.
+* `types` : recherche les cartes ayant au moins un des types passés en paramètre. La recherche ne s'effectue pas sur les sous-types (human, gobelin, ...) ou les super-types (legendary, basic). Pour passer un type en paramètre, une seule lettre suffit par type et elle peut être aussi bien en majuscule qu'en minuscule :
+  - C : Créature
+  - A : Artéfact
+  - E : Enchantement
+  - I : Éphémère (Instant)
+  - S : Rituel (Sorcery)
+  - P : Planeswalker
+  - L : Terrain (Land)
+  - N : Plan (Plane) (le P est déjà pris par Planeswalker)
+  - O : Phénomène (Phenomenon) (même problème que pour le plan)
 
-Exemple : `GET /api/cards?name=gideon&cmc=4` nous renverra toutes les cartes qui ont Gideon dans leur nom et dont le cout converti de mana est de exactement 4
 
-D'autres conditions arriveront
+Exemple : `GET /api/cards?name=gideon&cmc=4&types=c` nous renverra toutes les cartes de créature qui ont gideon dans leur nom (insensible à la casse) et dont le cout converti de mana est de exactement 4
+
+D'autres conditions arriveront, ainsi que la recherche par nom français.
 
 
 # Format des données renvoyées

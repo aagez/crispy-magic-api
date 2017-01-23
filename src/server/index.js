@@ -54,6 +54,8 @@ app.get('/logout', (request, response) => {
 app.use('/api/cards', require('./api/cards.js'));
 app.use('/profile', require('./api/profile.js'));
 app.use('/auth/facebook', require('./auth/facebook.js'));
+app.use('/auth/google', require('./auth/google.js'));
+app.use('/auth/twitter', require('./auth/twitter.js'))
 
 app.listen(8080);
 

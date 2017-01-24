@@ -41,3 +41,5 @@ jspm_packages
 
 # Yarn files
 .yarnclean
+
+src/server/config/auth.js

@@ -36,8 +36,19 @@ function generateDbRequest(params) {
   }
   if (params.types !== undefined) {
     const types = util.parseTypes(params.types);
-    dbRequest.cards.$elemMatch.types = {$in : types};
-    dbFilter.fields.cards.$elemMatch.types = {$in : types};
+    dbRequest.cards.$elemMatch.types = {$in: types};
+    dbFilter.fields.cards.$elemMatch.types = {$in: types};
+  }
+  if (params.colors !== undefined) {
+    const colors = util.parseColors(params.colors);
+    if (params.colors.includes('a')) {
+      dbRequest.cards.$elemMatch.colors = {$all: colors};
+      dbFilter.fields.cards.$elemMatch.colors = {$all: colors};
+    }
+    else { 
+      dbRequest.cards.$elemMatch.colors = {$in: colors};
+      dbFilter.fields.cards.$elemMatch.colors = {$in: colors};
+    }
   }
 
   return {dbRequest, dbFilter};

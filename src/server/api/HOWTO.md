@@ -22,6 +22,13 @@ Voici la liste des paramètres possibles
   - L : Terrain (Land)
   - N : Plan (Plane) (le P est déjà pris par Planeswalker)
   - O : Phénomène (Phenomenon) (même problème que pour le plan)
+* `colors` : recherche des cartes par couleur, elle repose sur un principe similaire à celui de la recherche pas type. Pour chaque couleur, une seule lettre est nécessaire : 
+  - B pour noir (Black)
+  - U pour bleu (blUe)
+  - W pour blanc (White)
+  - R pour rouge (Red)
+  - G pour vert (Green)
+La réponse renverra toute les cartes ayant au moins une de ces couleurs. Il est possible de rechercher les cartes sui ont toutes ces couleurs à la fois en ajoutant 'A'. La recherche de cartes incolores arrivera prochainement
 
 
 Exemple : `GET /api/cards?name=gideon&cmc=4&types=c` nous renverra toutes les cartes de créature qui ont gideon dans leur nom (insensible à la casse) et dont le cout converti de mana est de exactement 4

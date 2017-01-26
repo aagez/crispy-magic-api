@@ -44,8 +44,17 @@ function acceptCredentials(accessToken, refreshToken, profile, done) {
           winston.debug('User found : ' + JSON.stringify(doc));
           user = doc;
         } else {
-          user = profile;
+          if (profile.provider === "twitter")
+            user.name = profile.username;
+          else
+            user.name = profile.displayName;
+          user.provider = profile.provider;
+          user.id = profile.id;
+          user.email = profile.email;
           user.token = accessToken;
+          user.refreshToken = refreshToken;
+          user.photos = profile.photos
+          user.decks = [];
           winston.debug('User not found, creating new : ' + JSON.stringify(user));
           users.insert(user);
         }

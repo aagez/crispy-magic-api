@@ -21,10 +21,12 @@
     "gulp-nodemon": "^2.2.1"
   },
   "dependencies": {
+    "body-parser": "^1.16.0",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-alpha.2",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
+    "eyespect": "^0.1.10",
     "merge-descriptors": "^1.0.1",
     "mongodb": "^2.2.16",
     "monk": "^3.1.3",

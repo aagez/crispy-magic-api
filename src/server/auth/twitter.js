@@ -6,7 +6,7 @@ const passport = require('./passport.js');
 router.get('/', passport.authenticate('twitter'));
 
 router.get('/callback', passport.authenticate('twitter', {
-  successRedirect : '/profile',
+  successRedirect : '/api/profile',
   failureRedirect : '/'
 }));
 

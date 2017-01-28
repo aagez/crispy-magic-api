@@ -54,9 +54,9 @@ app.get('/logout', (request, response) => {
 app.use('/api/cards', require('./api/cards.js'));
 app.use('/api/profile', require('./api/profile.js'));
 app.use('/api/deck', require('./api/deck.js'));
-app.use('/auth/facebook', require('./auth/facebook.js'));
-app.use('/auth/google', require('./auth/google.js'));
-app.use('/auth/twitter', require('./auth/twitter.js'))
+app.use('/auth/facebook', passport.ensureUnauthenticated, require('./auth/facebook.js'));
+app.use('/auth/google', passport.ensureUnauthenticated, require('./auth/google.js'));
+app.use('/auth/twitter', passport.ensureUnauthenticated, require('./auth/twitter.js'))
 
 
 app.listen(8080);

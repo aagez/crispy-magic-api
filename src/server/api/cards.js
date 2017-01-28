@@ -65,7 +65,7 @@ router.get('/', (request, response) => {
     winston.debug('filter object : ' + JSON.stringify(dbFilter));
     response.setHeader('Content-Type', 'text/json');
     response.setHeader('Access-Control-Allow-Origin', '*')
-    response.json(result);
+    response.status(200).json(result);
   });
 })
 

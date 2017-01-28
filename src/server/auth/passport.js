@@ -31,7 +31,8 @@ passport.deserializeUser((id, done) => {
 
 passport.ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) { return next(null); }
-  res.redirect('/error')
+
+  res.status(401).jsonp({error: "You have to be authenticated in order to access this resource"})
 }
 
 function acceptCredentials(accessToken, refreshToken, profile, done) {
